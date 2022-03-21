@@ -1,0 +1,36 @@
+.flexTitleScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subFlexTitleScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 175px;
+    width: 320px;
+}
+.flexRoundSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3em;
+}
+
+@include md {
+    .subFlexTitleScreen {
+        height: 175px;
+        width: 600px;
+    }
+    .flexRoundSelect {
+        margin-top: 5em;
+    }
+}
+
+@include lg {
+    .subFlexTitleScreen {
+        height: 300px;
+        width: 1200px;
+    }
+}

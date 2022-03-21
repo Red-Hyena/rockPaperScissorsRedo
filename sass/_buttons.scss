@@ -1,0 +1,27 @@
+.roundSelectBtn {
+    height: 50px;
+    width: 100px;
+    background-color: $secondary;
+    border: 1em solid $secondary;
+    border-radius: 10px;
+}
+
+@include md {
+    .roundSelectBtn {
+    height: 75px;
+    width: 150px;
+    background-color: $secondary;
+    border: 1em solid $secondary;
+    border-radius: 10px;
+    }
+}
+
+@include lg {
+    .roundSelectBtn {
+    height: 100px;
+    width: 300px;
+    background-color: $secondary;
+    border: 1em solid $secondary;
+    border-radius: 10px;    
+    }
+}
