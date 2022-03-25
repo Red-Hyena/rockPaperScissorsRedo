@@ -6,26 +6,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/index.css">
         <title>Rock, Paper, Scissors</title>
-        <script src="/js/rpsGame.js" defer></script>
+        <script src="/js/dist/masterScript.js" defer></script>
+        <script src="https://kit.fontawesome.com/bab2533d74.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <article class="flexTitleScreen">
-            <h1>Rock | Paper | Scissors</h1>
-            <div class="subFlexTitleScreen">
-                <p>To start, select the amount of rounds you wish to play. Then push the 
-                    Rock, Paper or Scissors button and wait for the AI to make their turn.</p>
-                <ul>
-                    <li>Rock beats Scissors</li>
-                    <li>Paper beats Rock</li>
-                    <li>Scissors beats Paper</li>
-                </ul>
+        <div id="preGamePage" class="unloadedPage">
+            <article class="flexTitleScreen">
+                <h1>Rock | Paper | Scissors</h1>
+                <div class="subFlexTitleScreen">
+                    <p>To start, select the amount of rounds you wish to play. Then push the 
+                        Rock, Paper or Scissors button and wait for the AI to make their turn.</p>
+                    <ul>
+                        <li>Rock beats Scissors</li>
+                        <li>Paper beats Rock</li>
+                        <li>Scissors beats Paper</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="flexRoundSelect">
+                <button type="submit" id="btnThreeRounds" class="roundSelectBtn" value="3">
+                3 Rounds</button>
+                <button type="submit" id="btnFiveRounds" class="roundSelectBtn" value="5">
+                5 Rounds</button>
+                <button type="submit" id="btnSevenRounds" class="roundSelectBtn" value="7">
+                7 Rounds</button>
+            </article>
+        </div>
+        
+        <article id="gamePage" class="loadedPage">
+            <div class="resetFlex">
+                <button type="submit" id="resetBtn">RESET</button>
             </div>
-        </article>
-        <article class="flexRoundSelect">
-            <button type="submit" id="btnThreeRounds" class="roundSelectBtn">3 Rounds</button>
-            <button type="submit" id="btnFiveRounds" class="roundSelectBtn">5 Rounds</button>
-            <button type="submit" id="btnSevenRounds" class="roundSelectBtn">7 Rounds</button>
+
+            <div class="gameSectionFlex">
+                <div class="playerSectionFlex">
+                    <button type="submit" id="rockBtn" class="playerBtn" value="rock">
+                    <i class="fas fa-hand-rock"></i></button>
+                    <button type="submit" id="paperBtn" class="playerBtn" value="paper">
+                    <i class="fas fa-hand-paper"></i></button>
+                    <button type="submit" id="scissorsBtn" class="playerBtn" value="scissors">
+                    <i class="fas fa-hand-scissors"></i></button>
+                </div>
+
+                <div class="textSeperator">
+                    <p class="specialText">VS</p>
+                </div>
+
+                <div class="computerSectionFlex">
+                    <button type="submit" id="aiRock" class="activeAI">
+                    <i class="fas fa-hand-rock"></i></button>
+                    <button type="submit" id="aiPaper" class="inactiveAI">
+                    <i class="fas fa-hand-paper"></i></button>
+                    <button type="submit" id="aiScissors" class="inactiveAI">
+                    <i class="fas fa-hand-scissors"></i></button>
+                </div>
+            </div>
+
+            <div class="tableSectionFlex">
+                <table id="resultsTable">
+                    
+                </table>                
+            </div>
         </article>
     </body>
 </html>

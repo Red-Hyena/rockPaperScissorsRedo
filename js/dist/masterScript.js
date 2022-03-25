@@ -1,13 +1,34 @@
-// Test setup
-const testBtn = document.querySelector("#testButton");
+// Page Transitions
+var preGamePage = document.getElementById('preGamePage');
+var gamePage = document.getElementById('gamePage');
 
-testBtn.addEventListener('click', gameThreeRounds);
+var btnThreeRounds = document.querySelector('#btnThreeRounds');
+var btnFiveRounds = document.querySelector('#btnFiveRounds');
+var btnSevenRounds = document.querySelector('#btnSevenRounds');
+var resetBtn = document.querySelector("#resetBtn")
+
+btnThreeRounds.addEventListener('click', pageTransitionRoundBtn);
+btnFiveRounds.addEventListener('click', pageTransitionRoundBtn);
+btnSevenRounds.addEventListener('click', pageTransitionRoundBtn);
+resetBtn.addEventListener('click', pageTransitionResetBtn);
+
+function pageTransitionRoundBtn() {
+    var roundNumber = parseInt(this.value);
+    preGamePage.className = "unloadedPage";
+    gamePage.className = "loadedPage";
+    alert(`${roundNumber}`);
+}
+
+function pageTransitionResetBtn() {
+    gamePage.className = "unloadedPage";
+    preGamePage.className = "loadedPage";
+}
 // Multiple Rounds
 var playerScore = 0;
 var computerScore = 0;
 
 function gameThreeRounds() {
-    while (playerScore < 3 && computerScore < 3) {
+    while (playerScore.length < 3 && computerScore.length < 3) {
         gameSingleRound();
         alert (`The score is: Player: ${playerScore} vs Computer: ${computerScore}`);
     }
@@ -24,14 +45,15 @@ function gameSevenRounds() {
         alert (`The score is: Player: ${playerScore} vs Computer: ${computerScore}`);
     }
 };
+
 // Single Round
 function gameSingleRound() {
     playerMove();
     computerMove();
     if ((playerChoice === "rock") && (computerChoice === "rock")) {
         alert (`Test Success, DRAW! You both played ${playerChoice}`);
-        playerScore += 0;
-        computerScore +=0;
+        playerScore.push(0) += 0;
+        computerScore.push(0) +=0;
     } else if ((playerChoice === "rock") && (computerChoice === "paper")) {
         alert (`Test Success, DEFEAT! ${computerChoice} beats ${playerChoice}`);
         computerScore += 1;
@@ -79,4 +101,15 @@ function playerMove() {
     playerChoice = playerInput.toLowerCase();
 };
 
+// Scoring System
+var playerScore = [];
+var computerScore = [];
 
+gameThreeRounds();
+// Results Table Script
+function generateTableHead(table) {
+    let thead = table.createTHead();
+}
+
+let table = document.querySelector("#resultsTable");
+generateTableHead(table);

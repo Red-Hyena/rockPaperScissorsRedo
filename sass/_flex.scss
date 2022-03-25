@@ -1,3 +1,4 @@
+// Pre-Game Page
 .flexTitleScreen {
     display: flex;
     flex-direction: column;
@@ -17,8 +18,40 @@
     justify-content: space-around;
     margin-top: 3em;
 }
+// Game Page
+.resetFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameSectionFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playerSectionFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.computerSectionFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+// Table
+.tableSectionFlex {
+    display: flex;
+    justify-content: space-around;
+}
+.unloadedPage {
+    display: none;
+}
 
 @include md {
+    // Pre-Game Page
     .subFlexTitleScreen {
         height: 175px;
         width: 600px;
@@ -29,8 +62,16 @@
 }
 
 @include lg {
+    // Pre-Game Page
     .subFlexTitleScreen {
         height: 300px;
         width: 1200px;
+    }
+    // Game Page
+    .gameSectionFlex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
     }
 }

@@ -5,14 +5,48 @@
     border: 1em solid $secondary;
     border-radius: 10px;
 }
+#resetBtn {
+    height: 50px;
+    width: 100px;
+    background-color: $secondary;
+    border: 1em solid $secondary;
+    border-radius: 10px;
+    margin: 1em 0;
+}
+.playerBtn {
+    height: 100px;
+    width: 100px;
+    background-color: $secondary;
+    border: none;
+    margin: 1em 1em;
+}
+.activeAI {
+    height: 100px;
+    width: 100px;
+    background-color: $secondary;
+    border: none;
+    margin: 1em 1em;
+}
+.inactiveAI {
+    display: none;
+}
 
 @include md {
     .roundSelectBtn {
     height: 75px;
     width: 150px;
-    background-color: $secondary;
-    border: 1em solid $secondary;
-    border-radius: 10px;
+    }
+    #resetBtn {
+        height: 75px;
+        width: 150px;
+    }
+    .playerBtn {
+        height: 200px;
+        width: 200px;
+    }
+    .activeAI {
+        height: 200px;
+        width: 200px;
     }
 }
 
@@ -20,8 +54,18 @@
     .roundSelectBtn {
     height: 100px;
     width: 300px;
-    background-color: $secondary;
-    border: 1em solid $secondary;
-    border-radius: 10px;    
     }
+    #resetBtn {
+        height: 100px;
+        width: 300px;
+    }
+    .playerBtn {
+        height: 250px;
+        width: 250px;
+    }
+    .activeAI {
+        height: 250px;
+        width: 250px;
+    }
+    
 }
